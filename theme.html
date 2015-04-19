@@ -106,13 +106,7 @@
           </div>
           {% endif %}
 
-          {% if site.tags %}
-  <div class="tags">
-    {% for tag in site.tags %}
-      <a href="/tag/{{ tag.name }}">#{{ tag.name }}</a>
-    {% endfor %}
-  </div>
-{% endif %}
+          
           </ul>
           
           <!--
@@ -152,14 +146,6 @@
             <p><a href="{{ post.url }}"><span class="typcn typcn-link"></span> {{ post.url }}</a></p>
             {% endif %}
           </div>
-
-          {% if post.tags %}
-          <ul class="tags">
-            {% for tag in post.tags %}
-            <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
-            {% endfor %}
-          </ul>
-          {% endif %}
 
           <div class="post-info">
             <div class="info-left">
@@ -262,18 +248,8 @@
 
     {{ footer_meta }}
 
-    <script>
-      $('a.toggle').on('click', function() {
-        $('div.mobile-nav ul').toggle('fast', function() {});
-      });
-    </script>
+  
     
-{% if site.tags %}
-  <div class="tags">
-    {% for tag in site.tags %}
-      <a href="/tag/{{ tag.name }}">#{{ tag.name }}</a>
-    {% endfor %}
-  </div>
-{% endif %}
+
   </body>
 </html>
