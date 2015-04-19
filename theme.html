@@ -73,7 +73,13 @@
         {% if is_tag %}
         <h4 class="tag-header">Showing all posts tagged as {{ tag }}:</h4>
         {% endif %}
-
+{% if site.tags %}
+  <div class="tags">
+    {% for tag in site.tags %}
+      <a href="/tag/{{ tag.name }}">#{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
         {% for post in posts %}
         <div class="post-fragment">
           {% if post.photos %}
@@ -86,7 +92,7 @@
             <a href="{{ post.permalink }}">
             {% endif %}
               {% if photo %}
-              <img src="{{ photo.width_700 }}" />
+              <img src="{{ photo.width_750 }}" />
               {% else %}
               <img src="http://placehold.it/400x300/0eafff/ffffff.png" alt="" />
               {% endif %}
