@@ -73,7 +73,13 @@
         {% if is_tag %}
         <h4 class="tag-header">Showing all posts tagged as {{ tag }}:</h4>
         {% endif %}
-
+{% if site.tags %}
+  <div class="tags">
+    {% for tag in site.tags %}
+      <a href="/tag/{{ tag.name }}">#{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
         {% for post in posts %}
         <div class="post-fragment">
           {% if post.photos %}
@@ -86,7 +92,7 @@
             <a href="{{ post.permalink }}">
             {% endif %}
               {% if photo %}
-              <img src="{{ photo.width_600 }}" />
+              <img src="{{ photo.width_750 }}" />
               {% else %}
               <img src="http://placehold.it/400x300/0eafff/ffffff.png" alt="" />
               {% endif %}
@@ -109,13 +115,7 @@
           
           </ul>
           
-          <!--
-          <div class="post-body">
-            {% if post.content|striptags|wordcount > 0 %}
-              <p>{{ post.content|striptags|truncate(300) }}</p>
-            {% endif %}
-          </div>
-          -->
+          
         </div>
         {% endfor %}
 
@@ -247,7 +247,10 @@
     {% endif %}
 
     {{ footer_meta }}
-
+      <footer class="footer">
+        <div class="copyright">
+          <p class="pull-left">All rights Reserved &copy; <a href="/">{{ site.name }}</a>.</p>
+          <p class="pull-right">Powered by <a href="http://postach.io" target="_blank">Postach.io</a> | 
   
     
 
