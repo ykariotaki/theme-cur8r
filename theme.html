@@ -147,14 +147,7 @@
             {% endif %}
           </div>
 
-          {% if post.tags %}
-          <ul class="tags">
-            {% for tag in post.tags %}
-            <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-
+          
           <div class="post-info">
             <div class="info-left">
               {{ theme.social.bar }}
