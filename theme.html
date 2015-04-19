@@ -109,13 +109,7 @@
           
           </ul>
           
-          <!--
-          <div class="post-body">
-            {% if post.content|striptags|wordcount > 0 %}
-              <p>{{ post.content|striptags|truncate(300) }}</p>
-            {% endif %}
-          </div>
-          -->
+          
         </div>
         {% endfor %}
 
@@ -247,7 +241,10 @@
     {% endif %}
 
     {{ footer_meta }}
-
+      <footer class="footer">
+        <div class="copyright">
+          <p class="pull-left">All rights Reserved &copy; <a href="/">{{ site.name }}</a>.</p>
+          <p class="pull-right">Powered by <a href="http://postach.io" target="_blank">Postach.io</a> | Design based on <a href="http://www.eleventhemes.com/gridly-theme/">Gridly</a></p>
   
     
 
